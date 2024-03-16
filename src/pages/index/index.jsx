@@ -1,16 +1,13 @@
 import { View, Text } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
+import useTabBar from '@/hooks/use-tab-bar'
 import './index.scss'
 
 export default function Index() {
-
-  useLoad(() => {
-    console.log('Page loaded.')
-  })
+  useTabBar(0)
 
   return (
-    <View className='index'>
-      <Text>Hello world!</Text>
+    <View className="index">
+      <Text>首页</Text>
     </View>
   )
 }
