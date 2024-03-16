@@ -47,7 +47,8 @@ export default function CustomTabBar() {
   const currentRoute = useMemo(() => {
     const pages = Taro.getCurrentPages()
     const currentPage = pages[pages.length - 1]
-    return currentPage.route?.split('?')[0]
+    const route = currentPage.route?.split('?')[0]
+    return IS_H5 ? route : `/${route}`
   }, [])
 
   const isTabBarPage = useMemo(() => {
